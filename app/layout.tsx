@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Matheus Carvalho | AI Developer | Python, IA e Desenvolvimento Backend",
+  title: "Maaaatheus Carvalho | AI Developer | Python, IA e Desenvolvimento Backend",
   description:
     "Portfólio de Matheus Carvalho — AI Developer e graduando em Ciência da Computação no CEFET/RJ. Experiência com chatbots IA, FastAPI, Python, LLMs, machine learning e pesquisa quantitativa.",
   metadataBase: new URL("https://matheus.dev"),
