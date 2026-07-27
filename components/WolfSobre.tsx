@@ -56,9 +56,9 @@ export default function WolfSobre() {
             <div className="absolute -inset-2 bg-wolf-blue/10 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-500" />
             <div className="relative overflow-hidden rounded-2xl">
               <img
-                src={img("/images/membros-wolf2.jpeg")}
+                src={img("/images/apresentacao_asset.jpeg")}
                 alt="Membros da Wolf Finance"
-                className="w-full h-[320px] sm:h-[400px] object-cover object-[center_85%]"
+                className="w-full h-[100px] sm:h-[400px] object-cover object-[center_70%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-wolf-navy/40 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
