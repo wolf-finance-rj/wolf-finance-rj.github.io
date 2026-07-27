@@ -58,7 +58,7 @@ export default function WolfSobre() {
               <img
                 src={img("/images/apresentacao_asset.jpeg")}
                 alt="Membros da Wolf Finance"
-                className="w-full h-[320px] sm:h-[400px] object-cover object-[center_70%]"
+                className="w-full h-[220px] sm:h-[400px] object-cover object-[center_70%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-wolf-navy/40 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
