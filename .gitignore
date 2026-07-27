@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# project cleanup — source files, reference notes, archived content
+/fotos da wolf/
+/arquivado/
+oquefazemos_wolffinance.md
+padraodecor_wolffinance.md

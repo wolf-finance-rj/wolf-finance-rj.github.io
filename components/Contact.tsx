@@ -2,21 +2,17 @@
 
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle, AlertCircle, Download } from "lucide-react";
-import { personalInfo, socialLinks } from "@/data/portfolioData";
+import { Send, CheckCircle, AlertCircle, Mail, Linkedin, Instagram } from "lucide-react";
+import { contato } from "@/data/wolfData";
 import SectionTitle from "./SectionTitle";
-import SocialLinks from "./SocialLinks";
-import { useLanguage } from "@/context/LanguageContext";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
-// Crie seu formulário em https://formspree.io para matheuspc3@hotmail.com e cole o ID abaixo
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkodjevl";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdaqwryy";
 
 export default function Contact() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const { t } = useLanguage();
 
   const validate = (form: HTMLFormElement) => {
     const errs: Record<string, string> = {};
@@ -24,11 +20,11 @@ export default function Contact() {
     const email = (form.elements.namedItem("email") as HTMLInputElement)?.value.trim();
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value.trim();
 
-    if (!name) errs.name = t("contact.validation.nameRequired");
-    if (!email) errs.email = t("contact.validation.emailRequired");
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = t("contact.validation.emailInvalid");
-    if (!message) errs.message = t("contact.validation.messageRequired");
-    else if (message.length < 10) errs.message = t("contact.validation.messageShort");
+    if (!name) errs.name = "O nome é obrigatório";
+    if (!email) errs.email = "O email é obrigatório";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = "Email inválido";
+    if (!message) errs.message = "A mensagem é obrigatória";
+    else if (message.length < 10) errs.message = "Mensagem muito curta (mín. 10 caracteres)";
 
     return errs;
   };
@@ -59,12 +55,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contato" className="py-24 bg-wolf-light-gray/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          label={t("contact.label")}
-          title={t("contact.title")}
-          description={t("contact.description")}
+          label="Contato"
+          title="Entre em contato"
+          description="Tem interesse em saber mais ou fazer parte da Wolf Finance?"
         />
 
         <div className="max-w-4xl mx-auto grid lg:grid-cols-5 gap-10">
@@ -79,18 +75,18 @@ export default function Contact() {
             className="lg:col-span-3 space-y-5"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-white mb-1.5">
-                {t("contact.name")}
+              <label htmlFor="name" className="block text-sm font-medium text-wolf-navy mb-1.5">
+                Nome
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 autoComplete="name"
-                className={`w-full px-4 py-3 rounded-xl border bg-white text-[#001030] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#003070] focus:border-transparent transition-shadow ${
+                className={`w-full px-4 py-3 rounded-xl border bg-white text-wolf-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-wolf-blue focus:border-transparent transition-shadow ${
                   errors.name ? "border-red-400" : "border-gray-300"
                 }`}
-                placeholder={t("contact.namePlaceholder")}
+                placeholder="Seu nome"
               />
               {errors.name && (
                 <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
@@ -100,18 +96,18 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-white mb-1.5">
-                {t("contact.email")}
+              <label htmlFor="email" className="block text-sm font-medium text-wolf-navy mb-1.5">
+                Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 autoComplete="email"
-                className={`w-full px-4 py-3 rounded-xl border bg-white text-[#001030] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#003070] focus:border-transparent transition-shadow ${
+                className={`w-full px-4 py-3 rounded-xl border bg-white text-wolf-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-wolf-blue focus:border-transparent transition-shadow ${
                   errors.email ? "border-red-400" : "border-gray-300"
                 }`}
-                placeholder={t("contact.emailPlaceholder")}
+                placeholder="seu@email.com"
               />
               {errors.email && (
                 <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
@@ -121,17 +117,17 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-white mb-1.5">
-                {t("contact.message")}
+              <label htmlFor="message" className="block text-sm font-medium text-wolf-navy mb-1.5">
+                Mensagem
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={5}
-                className={`w-full px-4 py-3 rounded-xl border bg-white text-[#001030] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#003070] focus:border-transparent transition-shadow resize-y ${
+                className={`w-full px-4 py-3 rounded-xl border bg-white text-wolf-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-wolf-blue focus:border-transparent transition-shadow resize-y ${
                   errors.message ? "border-red-400" : "border-gray-300"
                 }`}
-                placeholder={t("contact.messagePlaceholder")}
+                placeholder="Sua mensagem"
               />
               {errors.message && (
                 <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
@@ -143,26 +139,26 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-[#003070] rounded-xl hover:bg-[#003060] transition-colors disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003070] focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-wolf-blue rounded-xl hover:bg-[#254a7d] transition-colors disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-wolf-blue focus-visible:ring-offset-2"
             >
               {status === "sending" ? (
-                t("contact.sending")
+                "Enviando..."
               ) : (
                 <>
                   <Send size={16} />
-                  {t("contact.send")}
+                  Enviar mensagem
                 </>
               )}
             </button>
 
             {status === "success" && (
               <p className="flex items-center gap-2 text-sm text-emerald-600">
-                <CheckCircle size={16} /> {t("contact.success")}
+                <CheckCircle size={16} /> Mensagem enviada com sucesso!
               </p>
             )}
             {status === "error" && (
               <p className="flex items-center gap-2 text-sm text-red-500">
-                <AlertCircle size={16} /> {t("contact.error")}
+                <AlertCircle size={16} /> Erro ao enviar. Tente novamente.
               </p>
             )}
           </motion.form>
@@ -175,33 +171,36 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h3 className="font-semibold text-[#001030] mb-4">{t("contact.directChannels")}</h3>
-              <div className="space-y-3">
+            <div className="bg-white rounded-2xl border border-wolf-light-gray p-6">
+              <h3 className="font-semibold text-wolf-navy mb-4">Canais diretos</h3>
+              <div className="space-y-4">
                 <a
-                  href={`mailto:${personalInfo.email}`}
-                  className="block p-3 rounded-xl hover:bg-gray-50 transition-colors text-sm text-gray-600 hover:text-[#003070]"
+                  href={`mailto:${contato.email}`}
+                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-wolf-light-gray/50 transition-colors text-sm text-wolf-navy/70 hover:text-wolf-blue"
                 >
-                  <span className="font-medium text-[#001030]">{t("contact.emailLabel")}</span>
-                  <br />
-                  {personalInfo.email}
+                  <Mail size={18} className="text-wolf-blue" />
+                  {contato.email}
                 </a>
-                <div className="p-3">
-                  <span className="font-medium text-[#001030] text-sm">{t("contact.socialLabel")}</span>
-                  <div className="mt-2">
-                    <SocialLinks links={socialLinks} />
-                  </div>
-                </div>
+                <a
+                  href={contato.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-wolf-light-gray/50 transition-colors text-sm text-wolf-navy/70 hover:text-wolf-blue"
+                >
+                  <Instagram size={18} className="text-wolf-blue" />
+                  Instagram
+                </a>
+                <a
+                  href={contato.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-wolf-light-gray/50 transition-colors text-sm text-wolf-navy/70 hover:text-wolf-blue"
+                >
+                  <Linkedin size={18} className="text-wolf-blue" />
+                  LinkedIn
+                </a>
               </div>
             </div>
-
-            <a
-              href={personalInfo.resumeUrl}
-              className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-semibold text-[#003070] bg-blue-50 rounded-xl hover:bg-[#003070] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003070] focus-visible:ring-offset-2"
-            >
-              <Download size={16} />
-              {t("contact.downloadResume")}
-            </a>
           </motion.div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Providers } from "@/components/Providers";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -10,31 +9,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Maaaatheus Carvalho | AI Developer | Python, IA e Desenvolvimento Backend",
+  title: "Wolf Finance | Liga de Investimentos do CEFET/RJ",
   description:
-    "Portfólio de Matheus Carvalho — AI Developer e graduando em Ciência da Computação no CEFET/RJ. Experiência com chatbots IA, FastAPI, Python, LLMs, machine learning e pesquisa quantitativa.",
-  metadataBase: new URL("https://matheus.dev"),
+    "A Wolf Finance é uma liga acadêmica do CEFET/RJ que conecta estudantes, mercado financeiro e sociedade por meio de pesquisa, formação técnica, projetos, competições e educação financeira.",
+  metadataBase: new URL("https://wolffinance.com.br"),
   openGraph: {
-    title: "Matheus Carvalho | AI Developer | Python, IA e Desenvolvimento Backend",
+    title: "Wolf Finance | Liga de Investimentos do CEFET/RJ",
     description:
-      "Portfólio de Matheus Carvalho — AI Developer e graduando em Ciência da Computação no CEFET/RJ. Experiência com chatbots IA, FastAPI, Python, LLMs e machine learning.",
-    url: "https://matheus.dev",
-    siteName: "Matheus Carvalho",
+      "Conhecimento financeiro que se transforma em experiência — Wolf Finance, a liga de investimentos do CEFET/RJ.",
+    url: "https://wolffinance.com.br",
+    siteName: "Wolf Finance",
     locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matheus Carvalho | AI Developer | Python, IA e Backend",
+    title: "Wolf Finance | Liga de Investimentos do CEFET/RJ",
     description:
-      "Portfólio de Matheus Carvalho — AI Developer, chatbots com IA, FastAPI, Python, LLMs e machine learning.",
+      "Conhecimento financeiro que se transforma em experiência — Wolf Finance, a liga de investimentos do CEFET/RJ.",
   },
   robots: {
     index: true,
     follow: true,
-  },
-  icons: {
-    icon: "/favicon.svg",
   },
 };
 
@@ -44,12 +40,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={inter.variable}
-    >
-      <body className="min-h-screen bg-white text-[#001030] antialiased font-sans">
-        <Providers>{children}</Providers>
+    <html lang="pt-BR" className={inter.variable}>
+      <body className="min-h-screen bg-white text-wolf-navy antialiased font-sans">
+        {children}
       </body>
     </html>
   );

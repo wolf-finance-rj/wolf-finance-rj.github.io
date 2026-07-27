@@ -6,9 +6,10 @@ interface SectionTitleProps {
   label: string;
   title: string;
   description?: string;
+  light?: boolean;
 }
 
-export default function SectionTitle({ label, title, description }: SectionTitleProps) {
+export default function SectionTitle({ label, title, description, light }: SectionTitleProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -20,11 +21,11 @@ export default function SectionTitle({ label, title, description }: SectionTitle
       <span className="text-[#003070] text-sm font-semibold tracking-wider uppercase">
         {label}
       </span>
-      <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-[#001030] tracking-tight">
+      <h2 className={`mt-2 text-3xl sm:text-4xl font-bold tracking-tight ${light ? "text-white" : "text-[#001030]"}`}>
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-[#5a6a7a] text-lg max-w-2xl leading-relaxed">
+        <p className={`mt-4 text-lg max-w-2xl leading-relaxed ${light ? "text-gray-300" : "text-[#5a6a7a]"}`}>
           {description}
         </p>
       )}
