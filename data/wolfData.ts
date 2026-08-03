@@ -166,7 +166,7 @@ export const seletivo = {
   title: "Faça parte da Wolf Finance",
   description:
     "O processo seletivo é destinado a estudantes interessados em desenvolver conhecimentos técnicos, profissionais e organizacionais.",
-  inscricaoUrl: "https://forms.gole/SEU_FORM_AQUI",
+  inscricaoUrl: "https://forms.gle/jcYcpEeHyWdBW2Wr8",
   trilhas: [
     {
       title: "Grupo de Estudos",
