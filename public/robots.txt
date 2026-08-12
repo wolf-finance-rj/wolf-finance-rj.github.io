@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wolf-finance-rj.github.io/sitemap.xml
