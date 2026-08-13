@@ -19,8 +19,8 @@ const fotos = [
   },
   {
     src: "/images/apresentacao_asset.jpeg",
-    alt: "Membros da Wolf Finance",
-    legenda: "Equipe Wolf Finance",
+    alt: "Apresentação da Asset Research",
+    legenda: "Apresentação da Asset Research",
   },
   {
     src: "/images/visita-hashdex.jpeg",
