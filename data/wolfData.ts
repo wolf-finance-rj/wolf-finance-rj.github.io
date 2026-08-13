@@ -180,9 +180,9 @@ export const seletivo = {
     },
   ],
   etapas: [
-    "Inscrição",
+    "Inscrição - Até 17/08",
     "Avaliação de raciocínio e resolução de problemas",
-    "Dinâmicas em grupo",
+    "Dinâmicas em grupo - Até 31/08",
     "Capacitações",
     "Desafios práticos",
     "Apresentações",
