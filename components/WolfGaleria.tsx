@@ -57,6 +57,16 @@ const fotos = [
     alt: "Palestra Educação Financeira",
     legenda: "Palestra — Educação Financeira",
   },
+  {
+    src: "/images/blockchainrio1.jpeg",
+    alt: "Blockchain Rio 1",
+    legenda: "Blockchain Rio",
+  },
+  {
+    src: "/images/blockchainrio2.jpeg",
+    alt: "Blockchain Rio 2",
+    legenda: "Blockchain Rio",
+  },
 ];
 
 export default function WolfGaleria() {
