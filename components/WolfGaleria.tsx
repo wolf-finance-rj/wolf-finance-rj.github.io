@@ -38,11 +38,6 @@ const fotos = [
     legenda: "Visita institucional — FGV",
   },
   {
-    src: "/images/apresentacao_asset.jpeg",
-    alt: "Apresentação Asset Research",
-    legenda: "Apresentação — Asset Research",
-  },
-  {
     src: "/images/novos_membros_25_2.jpeg",
     alt: "Novos membros 2025.2",
     legenda: "Novos membros 2025.2",
