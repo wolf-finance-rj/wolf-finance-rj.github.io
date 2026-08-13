@@ -8,7 +8,17 @@ import SectionTitle from "./SectionTitle";
 
 const fotos = [
   {
-    src: "/images/membros-wolf2.jpeg",
+    src: "/images/blockchainrio1.jpeg",
+    alt: "Blockchain Rio 1",
+    legenda: "Blockchain Rio",
+  },
+  {
+    src: "/images/blockchainrio2.jpeg",
+    alt: "Blockchain Rio 2",
+    legenda: "Blockchain Rio",
+  },
+  {
+    src: "/images/apresentacao_asset.jpeg",
     alt: "Membros da Wolf Finance",
     legenda: "Equipe Wolf Finance",
   },
@@ -56,16 +66,6 @@ const fotos = [
     src: "/images/palestra_ed_financeira.jpeg",
     alt: "Palestra Educação Financeira",
     legenda: "Palestra — Educação Financeira",
-  },
-  {
-    src: "/images/blockchainrio1.jpeg",
-    alt: "Blockchain Rio 1",
-    legenda: "Blockchain Rio",
-  },
-  {
-    src: "/images/blockchainrio2.jpeg",
-    alt: "Blockchain Rio 2",
-    legenda: "Blockchain Rio",
   },
 ];
 
