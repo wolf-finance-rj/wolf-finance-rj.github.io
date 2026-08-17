@@ -60,23 +60,40 @@ export default function WolfSeletivo() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-12"
-        >
-          <a
-            href={seletivo.inscricaoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-wolf-blue hover:bg-wolf-blue/80 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg"
-          >
-            Inscreva-se agora!
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-        </motion.div>
+  initial={{ opacity: 0, y: 24 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="flex justify-center mb-12"
+>
+  {/*
+  <a
+    href={seletivo.inscricaoUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 bg-wolf-blue hover:bg-wolf-blue/80 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg"
+  >
+    Inscreva-se agora!
+
+    <svg
+      className="w-4 h-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+      />
+    </svg>
+  </a>
+  */}
+
+  <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-gray-300 font-semibold px-8 py-4 rounded-xl cursor-not-allowed">
+    Inscrições encerradas
+  </div>
+</motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -90,16 +107,37 @@ export default function WolfSeletivo() {
           </div>
           <div className="flex flex-col gap-3">
             {seletivo.etapas.map((etapa, i) => (
-              <div
-                key={etapa}
-                className="flex items-center gap-2 text-sm text-gray-300"
+            <div
+              key={etapa}
+              className="flex items-center gap-2 text-sm"
+            >
+              <span
+                className={`flex-shrink-0 w-6 h-6 rounded-full text-xs flex items-center justify-center font-medium ${
+                  i === 0
+                    ? "bg-white/5 text-gray-500"
+                    : "bg-white/10 text-white"
+                }`}
               >
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-white/10 text-white text-xs flex items-center justify-center font-medium">
-                  {i + 1}
-                </span>
+                {i + 1}
+              </span>
+
+              <span
+                className={
+                  i === 0
+                    ? "text-gray-500 line-through decoration-gray-400"
+                    : "text-gray-300"
+                }
+              >
                 {etapa}
-              </div>
-            ))}
+              </span>
+
+              {i === 0 && (
+                <span className="ml-1 text-xs font-semibold text-red-300 bg-red-500/10 border border-red-400/20 px-2 py-0.5 rounded-full">
+                  Encerrada
+                </span>
+              )}
+            </div>
+          ))}
           </div>
         </motion.div>
       </div>
