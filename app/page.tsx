@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import WolfHero from "@/components/WolfHero";
 import WolfSobre from "@/components/WolfSobre";
+import WolfOrganograma from "@/components/WolfOrganograma";
 import WolfAreas from "@/components/WolfAreas";
 import WolfEventos from "@/components/WolfEventos";
 import WolfSeletivo from "@/components/WolfSeletivo";
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <WolfHero />
         <WolfSobre />
+        <WolfOrganograma />
         <WolfAreas />
         <WolfEventos />
         <WolfSeletivo />

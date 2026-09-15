@@ -189,10 +189,52 @@ export const seletivo = {
 };
 
 // ─── Governança ────────────────────────────
-export const governanca: Governanca[] = [
-  { name: "Matheus Carvalho", role: "Presidente" },
-  { name: "Caio Tavares", role: "Vice-Presidente" },
-];
+export const governanca = {
+  presidencia: {
+    name: "Matheus Carvalho",
+    role: "Presidente",
+    photo: "/images/governanca/matheus-carvalho.png",
+  },
+
+  vicePresidencia: {
+    name: "Caio Tavares",
+    role: "Vice-Presidente",
+    photo: "/images/governanca/caio-tavares.jpeg",
+  },
+
+  diretorias: [
+    {
+      name: "Lucas Alexandre",
+      role: "Diretor",
+      area: "Asset Research",
+      photo: "/images/governanca/lucas-alexandre.png",
+    },
+    {
+      name: "Igor Tabelini",
+      role: "Diretor",
+      area: "Quant Research",
+      photo: "/images/governanca/igor-tabelini.png",
+    },
+    {
+      name: "Andreza Freitas",
+      role: "Diretora",
+      area: "Recursos Humanos",
+      photo: "/images/governanca/andreza-freitas.png",
+    },
+    {
+      name: "Levy Rodrigues",
+      role: "Diretor",
+      area: "Marketing",
+      photo: "/images/governanca/levy-rodrigues.png",
+    },
+    {
+      name: "Matheus Lustosa",
+      role: "Diretor",
+      area: "Wolf Social",
+      photo: "/images/governanca/matheus-lustosa.png",
+    },
+  ],
+};
 
 // ─── Contato ───────────────────────────────
 export const contato = {
