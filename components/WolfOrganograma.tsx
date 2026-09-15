@@ -1,11 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { governanca } from "@/data/wolfData";
 import SectionTitle from "./SectionTitle";
 import { img } from "@/lib/paths";
 
-const topContainer = {
+/* Presidente → Vice */
+const topContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -15,7 +16,8 @@ const topContainer = {
   },
 };
 
-const item = {
+/* Cards */
+const item: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -30,7 +32,8 @@ const item = {
   },
 };
 
-const verticalLine = {
+/* Linhas verticais */
+const verticalLine: Variants = {
   hidden: {
     opacity: 0,
     scaleY: 0,
@@ -45,7 +48,8 @@ const verticalLine = {
   },
 };
 
-const diretoriasContainer = {
+/* Diretorias aparecendo em sequência */
+const diretoriasVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -59,7 +63,6 @@ export default function WolfOrganograma() {
   return (
     <section id="organograma" className="py-24 bg-wolf-navy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <SectionTitle
           label="Governança"
           title="Nossa estrutura"
@@ -68,16 +71,17 @@ export default function WolfOrganograma() {
         />
 
         <div className="max-w-6xl mx-auto">
-
           {/* Presidência → Vice */}
           <motion.div
             variants={topContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             className="flex flex-col items-center"
           >
-
             {/* Presidente */}
             <motion.div
               variants={item}
@@ -172,7 +176,10 @@ export default function WolfOrganograma() {
               opacity: 1,
               scaleX: 1,
             }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
             transition={{
               duration: 0.7,
               ease: "easeOut",
@@ -189,10 +196,13 @@ export default function WolfOrganograma() {
 
           {/* Diretorias */}
           <motion.div
-            variants={diretoriasContainer}
+            variants={diretoriasVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
             className="
               grid
               grid-cols-1
@@ -207,8 +217,7 @@ export default function WolfOrganograma() {
                 variants={item}
                 className="relative"
               >
-
-                {/* Linha vertical para cada diretoria */}
+                {/* Linha vertical de cada diretoria */}
                 <motion.div
                   initial={{
                     opacity: 0,
@@ -218,10 +227,13 @@ export default function WolfOrganograma() {
                     opacity: 1,
                     scaleY: 1,
                   }}
-                  viewport={{ once: true }}
+                  viewport={{
+                    once: true,
+                  }}
                   transition={{
                     duration: 0.4,
                     delay: 0.15,
+                    ease: "easeOut",
                   }}
                   className="
                     hidden md:block
@@ -279,7 +291,6 @@ export default function WolfOrganograma() {
               </motion.div>
             ))}
           </motion.div>
-
         </div>
       </div>
     </section>
