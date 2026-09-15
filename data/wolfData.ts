@@ -166,7 +166,7 @@ export const seletivo = {
   title: "Faça parte da Wolf Finance",
   description:
     "O processo seletivo é destinado a estudantes interessados em desenvolver conhecimentos técnicos, profissionais e organizacionais.",
-  inscricaoUrl: "https://forms.gle/jcYcpEeHyWdBW2Wr8",
+  inscricaoUrl: "https://forms.gle/ao4H8KGkV8Z3RThV6",
   trilhas: [
     {
       title: "Grupo de Estudos",
@@ -180,10 +180,8 @@ export const seletivo = {
     },
   ],
   etapas: [
-    "Inscrição - Até 16/08",
-    "Avaliação de raciocínio e resolução de problemas",
-    "Dinâmicas em grupo - Até 31/08",
-    "Capacitações",
+    "Inscrição",
+    "Dinâmicas em grupo + Avaliação",
     "Desafios práticos",
     "Apresentações",
     "Entrevista individual",

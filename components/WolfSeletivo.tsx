@@ -90,9 +90,28 @@ export default function WolfSeletivo() {
   </a>
   */}
 
-  <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-gray-300 font-semibold px-8 py-4 rounded-xl cursor-not-allowed">
-    Inscrições encerradas
-  </div>
+<a
+  href={seletivo.inscricaoUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 border border-emerald-500 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg"
+>
+  Inscreva-se! 
+
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+    />
+  </svg>
+</a>
 </motion.div>
 
         <motion.div
@@ -113,7 +132,7 @@ export default function WolfSeletivo() {
             >
               <span
                 className={`flex-shrink-0 w-6 h-6 rounded-full text-xs flex items-center justify-center font-medium ${
-                  i === 0
+                  i === 10
                     ? "bg-white/5 text-gray-500"
                     : "bg-white/10 text-white"
                 }`}
@@ -123,7 +142,7 @@ export default function WolfSeletivo() {
 
               <span
                 className={
-                  i === 0
+                  i === 10
                     ? "text-gray-500 line-through decoration-gray-400"
                     : "text-gray-300"
                 }
@@ -131,11 +150,7 @@ export default function WolfSeletivo() {
                 {etapa}
               </span>
 
-              {i === 0 && (
-                <span className="ml-1 text-xs font-semibold text-red-300 bg-red-500/10 border border-red-400/20 px-2 py-0.5 rounded-full">
-                  Encerrada
-                </span>
-              )}
+
             </div>
           ))}
           </div>
