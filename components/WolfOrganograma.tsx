@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import { Linkedin } from "lucide-react";
 import { governanca } from "@/data/wolfData";
 import SectionTitle from "./SectionTitle";
 import { img } from "@/lib/paths";
@@ -86,6 +87,7 @@ export default function WolfOrganograma() {
             <motion.div
               variants={item}
               className="
+                relative
                 bg-wolf-blue
                 border border-white/20
                 text-white
@@ -96,6 +98,37 @@ export default function WolfOrganograma() {
                 min-w-[280px]
               "
             >
+              {/* LinkedIn Presidente */}
+              {governanca.presidencia.linkedin && (
+                <a
+                  href={governanca.presidencia.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`LinkedIn de ${governanca.presidencia.name}`}
+                  className="
+                    absolute
+                    top-4
+                    right-4
+                    flex
+                    items-center
+                    justify-center
+                    w-8 h-8
+                    rounded-lg
+                    bg-white/10
+                    text-white
+                    border
+                    border-white/20
+                    hover:bg-white
+                    hover:text-wolf-blue
+                    hover:scale-110
+                    transition-all
+                    duration-300
+                  "
+                >
+                  <Linkedin size={17} />
+                </a>
+              )}
+
               <img
                 src={img(governanca.presidencia.photo)}
                 alt={governanca.presidencia.name}
@@ -127,6 +160,7 @@ export default function WolfOrganograma() {
             <motion.div
               variants={item}
               className="
+                relative
                 bg-white/10
                 backdrop-blur-sm
                 border border-white/20
@@ -138,6 +172,37 @@ export default function WolfOrganograma() {
                 min-w-[280px]
               "
             >
+              {/* LinkedIn Vice */}
+              {governanca.vicePresidencia.linkedin && (
+                <a
+                  href={governanca.vicePresidencia.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`LinkedIn de ${governanca.vicePresidencia.name}`}
+                  className="
+                    absolute
+                    top-4
+                    right-4
+                    flex
+                    items-center
+                    justify-center
+                    w-8 h-8
+                    rounded-lg
+                    bg-white/10
+                    text-white
+                    border
+                    border-white/20
+                    hover:bg-white
+                    hover:text-wolf-blue
+                    hover:scale-110
+                    transition-all
+                    duration-300
+                  "
+                >
+                  <Linkedin size={17} />
+                </a>
+              )}
+
               <img
                 src={img(governanca.vicePresidencia.photo)}
                 alt={governanca.vicePresidencia.name}
@@ -250,6 +315,7 @@ export default function WolfOrganograma() {
                 {/* Card da diretoria */}
                 <div
                   className="
+                    relative
                     mt-6
                     h-full
                     bg-white
@@ -264,6 +330,37 @@ export default function WolfOrganograma() {
                     duration-300
                   "
                 >
+                  {/* LinkedIn Diretor */}
+                  {diretoria.linkedin && (
+                    <a
+                      href={diretoria.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`LinkedIn de ${diretoria.name}`}
+                      className="
+                        absolute
+                        top-3
+                        right-3
+                        flex
+                        items-center
+                        justify-center
+                        w-8 h-8
+                        rounded-lg
+                        bg-wolf-blue/10
+                        text-wolf-blue
+                        border
+                        border-wolf-blue/10
+                        hover:bg-wolf-blue
+                        hover:text-white
+                        hover:scale-110
+                        transition-all
+                        duration-300
+                      "
+                    >
+                      <Linkedin size={16} />
+                    </a>
+                  )}
+
                   <img
                     src={img(diretoria.photo)}
                     alt={diretoria.name}

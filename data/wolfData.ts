@@ -194,12 +194,14 @@ export const governanca = {
     name: "Matheus Carvalho",
     role: "Presidente",
     photo: "/images/governanca/matheus-carvalho.png",
+    linkedin: "https://www.linkedin.com/in/matheuspc3/",
   },
 
   vicePresidencia: {
     name: "Caio Tavares",
     role: "Vice-Presidente",
     photo: "/images/governanca/caio-tavares.jpeg",
+    linkedin: "https://www.linkedin.com/in/caiotavaresalbuquerque/",
   },
 
   diretorias: [
@@ -208,30 +210,35 @@ export const governanca = {
       role: "Diretor",
       area: "Asset Research",
       photo: "/images/governanca/lucas-alexandre.png",
+      linkedin: "https://www.linkedin.com/in/lucas-alexandre-a1180b338/",
     },
     {
       name: "Igor Tabelini",
       role: "Diretor",
       area: "Quant Research",
       photo: "/images/governanca/igor-tabelini.png",
+      linkedin: "https://www.linkedin.com/in/LINKEDIN-DO-IGOR/",
     },
     {
       name: "Andreza Freitas",
       role: "Diretora",
       area: "Recursos Humanos",
       photo: "/images/governanca/andreza-freitas.png",
+      linkedin: "https://www.linkedin.com/in/andreza-freitas-aaaa1a364/",
     },
     {
       name: "Levy Rodrigues",
       role: "Diretor",
       area: "Marketing",
       photo: "/images/governanca/levy-rodrigues.png",
+      linkedin: "https://www.linkedin.com/in/levy-rodrigues76/",
     },
     {
       name: "Matheus Lustosa",
       role: "Diretor",
       area: "Wolf Social",
       photo: "/images/governanca/matheus-lustosa.png",
+      linkedin: "https://www.linkedin.com/in/matheuslustosadamasceno/",
     },
   ],
 };
