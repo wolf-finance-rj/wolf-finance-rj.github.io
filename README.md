@@ -24,7 +24,10 @@ Publicado em **https://wolf-finance-rj.github.io**.
 ├── app/                  # Páginas do Next.js
 │   ├── layout.tsx        # Layout global (head, meta, fonts)
 │   ├── page.tsx          # Página principal (monta as seções)
-│   └── globals.css       # Estilos globais e tema Tailwind
+│   ├── globals.css       # Estilos globais e tema Tailwind
+│   └── fundo/          # Páginas dos fundos fictícios
+│       ├── asset/        # Wolf Finance Capital (WFC-01)
+│       └── quant/        # Wolf Quant Fund (WQF-01)
 ├── components/           # Componentes do site
 │   ├── Navbar.tsx        # Menu de navegação
 │   ├── Footer.tsx        # Rodapé
@@ -59,6 +62,42 @@ Tudo que aparece escrito no site está em **`data/wolfData.ts`**. Para alterar:
 4. Suba as alterações (veja abaixo)
 
 Não precisa editar nada nos componentes — eles só exibem o que está nesse arquivo.
+
+---
+
+## 📈 Manutenção mensal dos fundos
+
+Os dois fundos fictícios têm um arquivo de dados que é a **única fonte de verdade** —
+todos os gráficos das páginas (cota, contribuição por mesa, drawdown, excesso de retorno)
+são **derivados automaticamente** dele. Para atualizar os números do mês, mexa apenas aqui:
+
+| Fundo | Página | Arquivo de dados |
+|---|---|---|
+| Wolf Finance Capital (WFC-01) | `/fundo/asset` | `app/fundo/asset/fund-data.ts` |
+| Wolf Quant Fund (WQF-01) | `/fundo/quant` | `app/fundo/quant/fund-data.ts` |
+
+A cada mês, em **cada** arquivo:
+
+1. **`REFERENCIA`** — troque `mes`, `updatedAt` e `proximaRevisao`.
+2. **`SERIE_MENSAL`** — adicione **uma linha nova no fim** do array com o mês novo
+   (`mes`, `fundo`, `cdi`, `ibov`, `contribuicao`, `drawdown`).
+   A soma de `contribuicao` deve bater com `fundo`.
+3. **`FUNDO`, `RISCO` e `DESKS`** — revise os números resumidos (`sharpe`, `volatilidade`,
+   `retornoAno`, `posicoes` e `metricaChave` de cada mesa).
+4. **`ALOCACAO`** — ajuste só se a distribuição de capital entre as mesas mudar.
+
+Exemplo de linha nova em `SERIE_MENSAL`:
+
+```ts
+// Wolf Finance Capital — contribuicao usa { macro, equity, digital }
+{ mes: "Out", fundo: 1.4, cdi: 1.1, ibov: 0.9, contribuicao: { macro: 0.5, equity: 0.6, digital: 0.3 }, drawdown: -0.5 },
+
+// Wolf Quant Fund — contribuicao usa { pair, momentum, ml }
+{ mes: "Out", fundo: 1.4, cdi: 1.1, ibov: 0.9, contribuicao: { pair: 0.5, momentum: 0.6, ml: 0.3 }, drawdown: -0.5 },
+```
+
+> Os valores são **fictícios** (simulação acadêmica). Não há número repetido no código —
+> tudo que não está nesses arquivos é calculado a partir deles.
 
 ---
 

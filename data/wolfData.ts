@@ -13,7 +13,7 @@ export interface Area {
   title: string;
   description: string;
   items?: string[];
-  subareas?: { title: string; description: string }[];
+  subareas?: { title: string; description: string; href?: string }[];
 }
 
 export interface Governanca {
@@ -83,6 +83,7 @@ export const sobre = {
 };
 
 // ─── Áreas ─────────────────────────────────
+
 export const areas: Area[] = [
   {
     id: "asset-research",
@@ -104,6 +105,7 @@ export const areas: Area[] = [
         title: "Wolf Finance Capital",
         description:
           "Fundo multimercado fictício que integra as análises das mesas em uma carteira simulada, praticando alocação de ativos, acompanhamento de posições e tomada de decisão em portfólio.",
+        href: "/fundo/asset",
       },
     ],
   },
@@ -117,6 +119,14 @@ export const areas: Area[] = [
       "ML Research",
       "Risk Management",
       "Market Intelligence",
+    ],
+    subareas: [
+      {
+        title: "Wolf Quant Fund",
+        description:
+          "Fundo quantitativo fictício que combina estratégias estatísticas clássicas e abordagens modernas, integrando as análises das mesas em uma carteira simulada para explorar a alocação de capital, a gestão de risco, o acompanhamento de posições e a tomada de decisões de portfólio.",
+        href: "/fundo/quant",
+      },
     ],
   },
   {
@@ -138,7 +148,6 @@ export const areas: Area[] = [
     ],
   },
 ];
-
 // ─── Eventos ───────────────────────────────
 export const eventos = {
   title: "Eventos e oportunidades",
@@ -188,7 +197,7 @@ export const seletivo = {
   ],
 };
 
-// ─── Governança ────────────────────────────
+// ─── Governança ────────────────────────────  
 export const governanca = {
   presidencia: {
     name: "Matheus Carvalho",
@@ -213,18 +222,18 @@ export const governanca = {
       linkedin: "https://www.linkedin.com/in/lucas-alexandre-a1180b338/",
     },
     {
-      name: "Igor Tabelini",
+      name: "Gustavo Arruda",
       role: "Diretor",
       area: "Quant Research",
-      photo: "/images/governanca/igor-tabelini.png",
-      linkedin: "https://www.linkedin.com/in/LINKEDIN-DO-IGOR/",
+      photo: "/images/governanca/gustavo-arruda.jpeg",
+      linkedin: "https://www.linkedin.com/in/gustavo--arruda/",
     },
     {
-      name: "Andreza Freitas",
+      name: "Ana Cláudia",
       role: "Diretora",
       area: "Recursos Humanos",
-      photo: "/images/governanca/andreza-freitas.png",
-      linkedin: "https://www.linkedin.com/in/andreza-freitas-aaaa1a364/",
+      photo: "/images/governanca/ana-claudia.png",
+      linkedin: "https://www.linkedin.com/in/ana-claudia-86ba45364/",
     },
     {
       name: "Levy Rodrigues",

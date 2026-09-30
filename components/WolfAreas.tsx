@@ -1,11 +1,13 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Link from "next/link";
 import {
   TrendingUp,
   BarChart3,
   Building2,
   HeartHandshake,
+  ArrowRight,
 } from "lucide-react";
 
 import { areas } from "@/data/wolfData";
@@ -222,9 +224,22 @@ export default function WolfAreas() {
                           border-wolf-light-gray
                         "
                       >
-                        <p className="text-sm font-semibold text-wolf-navy">
-                          {sub.title}
-                        </p>
+                        {sub.href ? (
+                          <Link
+                            href={sub.href}
+                            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-wolf-navy hover:text-wolf-blue transition-colors"
+                          >
+                            {sub.title}
+                            <ArrowRight
+                              size={14}
+                              className="transition-transform group-hover:translate-x-0.5"
+                            />
+                          </Link>
+                        ) : (
+                          <p className="text-sm font-semibold text-wolf-navy">
+                            {sub.title}
+                          </p>
+                        )}
 
                         <p className="mt-1 text-sm text-wolf-navy/70 leading-relaxed">
                           {sub.description}

@@ -3,6 +3,7 @@ import WolfHero from "@/components/WolfHero";
 import WolfSobre from "@/components/WolfSobre";
 import WolfOrganograma from "@/components/WolfOrganograma";
 import WolfAreas from "@/components/WolfAreas";
+import WolfFundos from "@/components/WolfFundos";
 import WolfEventos from "@/components/WolfEventos";
 import WolfSeletivo from "@/components/WolfSeletivo";
 import WolfGaleria from "@/components/WolfGaleria";
@@ -19,6 +20,7 @@ export default function Home() {
         <WolfSobre />
         <WolfOrganograma />
         <WolfAreas />
+        <WolfFundos />
         <WolfEventos />
         <WolfSeletivo />
         <WolfGaleria />
