@@ -8,6 +8,11 @@ import SectionTitle from "./SectionTitle";
 
 const fotos = [
   {
+    src: "/images/hashdex-university.jpeg",
+    alt: "Hashdex University Day",
+    legenda: "Hashdex University Day",
+  },
+  {
     src: "/images/blockchainrio1.jpeg",
     alt: "Blockchain Rio 1",
     legenda: "Blockchain Rio",
